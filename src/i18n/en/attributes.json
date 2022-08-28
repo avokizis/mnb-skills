@@ -1,0 +1,26 @@
+{
+  "vig": {
+    "tag": "vig",
+    "name": "Vigor"
+  },
+  "ctr": {
+    "tag": "ctr",
+    "name": "Control"
+  },
+  "end": {
+    "tag": "end",
+    "name": "Endurance"
+  },
+  "cng": {
+    "tag": "cng",
+    "name": "Cunning"
+  },
+  "soc": {
+    "tag": "soc",
+    "name": "Social"
+  },
+  "int": {
+    "tag": "int",
+    "name": "Intelligence"
+  }
+}

@@ -1,7 +1,9 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import attributes from './slices/attributes'
 
 export const store = configureStore({
   reducer: {
+    attributes,
   },
 });
 
@@ -13,3 +15,5 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+export default store
