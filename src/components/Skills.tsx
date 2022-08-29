@@ -3,7 +3,9 @@ import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { attributesPointsSelector, attributesSelector, setAttributes } from '../store/slices/attributes'
+import { setSkills, skillsPointsSelector, skillsSelector } from '../store/slices/skills'
 import Attribute from './Attribute'
+import Skill from './Skill'
 
 const Skills = () => {
   const dispatch = useDispatch()
@@ -12,15 +14,27 @@ const Skills = () => {
   const attributes = useSelector(attributesSelector)
   const attributesPoints = useSelector(attributesPointsSelector)
 
-  const listAttributes = attributes.map((attribute) => 
-    <AttributeRow key={attribute.id}>
-      <Attribute attribute={attribute}/>
-    </AttributeRow>
+  const skills = useSelector(skillsSelector)
+  const skillsPoints = useSelector(skillsPointsSelector)
+
+  const listAttributes = attributes.map((attribute) => {
+    const listSkills = skills.filter(({attributeId}) => attributeId === attribute.id).map((skill) => 
+      <Skill skill={skill} key={skill.id}/>
+    )
+
+    return(
+      <AttributeRow key={attribute.id}>
+        <Attribute attribute={attribute}/>
+        {listSkills}
+      </AttributeRow>
+    )
+  }
   )
 
   useEffect(() => {
     if(!attributes.length) {
       dispatch(setAttributes())
+      dispatch(setSkills())
     }
   })
 
@@ -29,7 +43,7 @@ const Skills = () => {
       <SkillsHeader>
         <Points>{attributesPoints}</Points>
         <SkillsHeaderTitle>{t('general.skills')}</SkillsHeaderTitle>
-        <Points>11</Points>
+        <Points>{skillsPoints}</Points>
       </SkillsHeader>
 
       <SkillsBody>

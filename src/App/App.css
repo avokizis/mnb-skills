@@ -1,5 +1,6 @@
 .app {
   display: flex;
+  flex-direction: column;
 
   width: 100vw;
   height: 100vh;
@@ -7,12 +8,6 @@
 
 .placeholder {
   min-width: 100px;
-  min-height: 100px;
-  border: 1px solid #000;
-}
-
-.right-side {
-  flex: 1 0 50vw;
-
+  min-height: 50px;
   border: 1px solid #000;
 }

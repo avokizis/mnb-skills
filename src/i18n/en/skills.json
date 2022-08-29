@@ -1,0 +1,74 @@
+{
+  "oneHanded": {
+    "name": "One Handed",
+    "description": "Mastery of fighting with one-handed weapons either with a shield or without."
+  },
+  "twoHanded": {
+    "name": "Two Handed",
+    "description": "Mastery of fighting with two-handed weapons of average length such as bigger axes and swords."
+  },
+  "polearm": {
+    "name": "Polearm",
+    "description": "Mastery of the spear, lance, staff and other polearms, both one-handed and two-handed."
+  },
+  "bow": {
+    "name": "Bow",
+    "description": "Familarity with bows and physical conditioning to shoot with them effectively."
+  },
+  "crossbow": {
+    "name": "Crossbow",
+    "description": "Knowledge of operating and maintaining crossbows."
+  },
+  "throwing": {
+    "name": "Throwing",
+    "description": "Mastery of throwing projectiles accurately and with power."
+  },
+  "riding": {
+    "name": "Riding",
+    "description": "The ability to control a horse, to keep your balance when it moves suddenly or unexpectedly, as well as general knowledge of horses, including their care and breeding."
+  },
+  "athletics": {
+    "name": "Athletics",
+    "description": "Physical fitness, speed and balance."
+  },
+  "crafting": {
+    "name": "Smithing",
+    "description": "The knowledge of how to forge metal, match handle to blade, turn poles, sew scales, and other skills useful in the assembly of weapons and armor"
+  },
+  "scouting": {
+    "name": "Scouting",
+    "description": "Knowledge of how to scan the wilderness for life. You can follow tracks, spot movement in the undergrowth, and spot an enemy across the valley from a flash of light on spearpoints or a dustcloud."
+  },
+  "tactics": {
+    "name": "Tactics",
+    "description": "Your judgment of how troops will perform in contact. This allows you to make a good prediction of when an unorthodox tactic will work, and when it won't."
+  },
+  "roguery": {
+    "name": "Roguery",
+    "description": "Experience with the darker side of human life. You can tell when a guard wants a bribe, you know how to intimidate someone, and have a good sense of what you can and can't get away with."
+  },
+  "charm": {
+    "name": "Charm",
+    "description": "The ability to make a person like and trust you. You can make a good guess at people's motivations and the kinds of arguments to which they'll respond."
+  },
+  "leadership": {
+    "name": "Leadership",
+    "description": "The ability to inspire. You can fill individuals with confidence and stir up enthusiasm and courage in larger groups."
+  },
+  "trade": {
+    "name": "Trade",
+    "description": "Familiarity with the most common goods in the marketplace and their prices, as well as the ability to spot defective goods or tell if you've been shortchanged in quantity"
+  },
+  "steward": {
+    "name": "Steward",
+    "description": "Ability to organize a group and manage logistics. This helps you to run an estate or administer a town, and can increase the size of a party that you lead or in which you serve as quartermaster."
+  },
+  "medicine": {
+    "name": "Medicine",
+    "description": "Knowledge of how to staunch bleeding, to set broken bones, to remove embedded weapons and clean wounds to prevent infection, and to apply poultices to relieve pain and soothe inflammation."
+  },
+  "engineering": {
+    "name": "Engineering",
+    "description": "Knowledge of how to make things that can withstand powerful forces without collapsing. Useful for building both structures and the devices that knock them down."
+  }
+}

@@ -8,6 +8,8 @@ interface IAttribute {
 interface ISkill {
   id: number,
   name: string,
+  description: string,
+  attributeId: number,
   value?: number,
   points?: number,
 }
