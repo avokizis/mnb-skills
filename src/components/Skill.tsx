@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { useTranslation } from "react-i18next"
 import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import { decrementSkillPointsById, incrementSkillPointsById } from "../store/slices/skills"
 
 export interface ISkillProps {
@@ -11,14 +12,31 @@ const Skill = ({skill}: ISkillProps) => {
   const dispatch = useDispatch()
   const { t } = useTranslation()
 
+  const navigate = useNavigate()
+
+  const onClickIncrement = (event: any) => {
+    dispatch(incrementSkillPointsById(skill.id))
+
+    event.stopPropagation()
+  }
+  const onClickDecrement = (event: any) => {
+    dispatch(decrementSkillPointsById(skill.id))
+
+    event.stopPropagation()
+  }
+
+  const onClickWrapper = (event: any) => {
+    navigate(`/home?selectedSkill=${skill.id}`)
+  }
+
   return(
-    <Wrapper>
+    <Wrapper onClick={onClickWrapper}>
       <div>{t(`skills.${skill.name}`)}</div>
       <div>{skill.value}</div>
       <PointsWrap>
-        <Button onClick={(e) => dispatch(decrementSkillPointsById(skill.id))}>-</Button>
+        <Button onClick={onClickDecrement}>-</Button>
         <div>{skill.points}</div>
-        <Button onClick={(e) => dispatch(incrementSkillPointsById(skill.id))}>+</Button>
+        <Button onClick={onClickIncrement}>+</Button>
       </PointsWrap>
     </Wrapper>
   )

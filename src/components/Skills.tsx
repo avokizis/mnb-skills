@@ -1,14 +1,12 @@
 import styled from '@emotion/styled'
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
-import { attributesPointsSelector, attributesSelector, setAttributes } from '../store/slices/attributes'
-import { setSkills, skillsPointsSelector, skillsSelector } from '../store/slices/skills'
+import { useSelector } from 'react-redux'
+import { attributesPointsSelector, attributesSelector } from '../store/slices/attributes'
+import { skillsPointsSelector, skillsSelector } from '../store/slices/skills'
 import Attribute from './Attribute'
 import Skill from './Skill'
 
 const Skills = () => {
-  const dispatch = useDispatch()
   const { t } = useTranslation()
 
   const attributes = useSelector(attributesSelector)
@@ -30,13 +28,6 @@ const Skills = () => {
     )
   }
   )
-
-  useEffect(() => {
-    if(!attributes.length) {
-      dispatch(setAttributes())
-      dispatch(setSkills())
-    }
-  })
 
   return (
     <Wrapper>

@@ -54,6 +54,7 @@ export const skillsSelector = (state: RootState) => {
   return skills
 }
 export const skillsPointsSelector = (state: RootState) => state.skills.points
+export const selectSkillById = (state: RootState, id: ISkill['id']): ISkill => state.skills.skills.find(skill => skill.id === id)
 
 export const { setSkills, incrementSkillPointsById, decrementSkillPointsById } = slice.actions
 

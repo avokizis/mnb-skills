@@ -25,6 +25,8 @@ interface IPerk {
   secondaryDescription?: string,
   secondaryRole?: PerkRole | string,
   troopClasses?: string[],
+  selected?: boolean,
+  disabled?: boolean,
 }
 
 enum PerkRole {

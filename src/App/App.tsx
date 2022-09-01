@@ -1,5 +1,5 @@
 import i18next from 'i18next'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { initReactI18next } from 'react-i18next'
 import './App.css'
 import en from '../i18n/en'
@@ -7,6 +7,12 @@ import ru from '../i18n/ru'
 
 import Skills from '../components/Skills'
 import styled from '@emotion/styled'
+import routes from '../router'
+import { useRoutes } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { setSkills } from '../store/slices/skills'
+import { attributesSelector, setAttributes } from '../store/slices/attributes'
+import { setPerks } from '../store/slices/perks'
 
 i18next
   .use(initReactI18next)
@@ -24,6 +30,19 @@ i18next
   })
 
 function App() {
+  const dispatch = useDispatch()
+
+  const attributes = useSelector(attributesSelector)
+  const routeList = useRoutes(routes)
+
+  useEffect(() => {
+    if(!attributes.length) {
+      dispatch(setAttributes())
+      dispatch(setSkills())
+      dispatch(setPerks())
+    }
+  })
+
   return (
     <div className="app">
       <Header>        
@@ -33,14 +52,13 @@ function App() {
       </Header>
       <Content>
         <SkillsStyled/>
-        <PageStyled>
-          <div className="placeholder">Skill Info</div>
-          <div className="placeholder">Perks</div>
+        <PageStyled>        
+            {routeList}
         </PageStyled>
       </Content>
       <Footer>
-        <div>Native 1.8.0</div>
-        <div>Git link</div>
+        <div className="placeholder">Native 1.8.0</div>
+        <div className="placeholder">Git link</div>
       </Footer>
     </div>
   );
